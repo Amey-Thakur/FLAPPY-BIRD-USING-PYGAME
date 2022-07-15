@@ -31,7 +31,6 @@ def check_collision(pipes):
 
 
 	if bird_rectangle.top <= -100 or bird_rectangle.bottom >= 900:
-		print("collision")
 		return False
 
 	return True
@@ -71,7 +70,7 @@ pygame.mixer.pre_init(frequency = 44100, size = 16, channels = 1, buffer = 512)
 pygame.init()
 screen = pygame.display.set_mode((576,1024))
 clock = pygame.time.Clock()
-game_font = pygame.font.Font('04B_19.ttf',40)
+game_font = pygame.font.Font('./assets/04B_19.TTF',40)
 
 # variables for the game
 gravity = 0.25
