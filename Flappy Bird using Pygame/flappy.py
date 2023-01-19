@@ -130,7 +130,7 @@ while True:
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_SPACE and game_active:
 				bird_movement = 0
-				bird_movement -= 12
+				bird_movement -= 8     # changed from 12 to 8 to reduce jumping speed....
 				flap_sound.play()
  
 			if event.key == pygame.K_SPACE and game_active == False:
