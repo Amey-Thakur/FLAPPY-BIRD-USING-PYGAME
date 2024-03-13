@@ -6,4 +6,4 @@
 
 <p align="center"> <b> 👉🏻 Created Flappy Bird Game Using PyGame 👈🏻 <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/COMPUTER-ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
