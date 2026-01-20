@@ -32,12 +32,24 @@ jobs:
       - name: Build with pygbag
         run: |
           pygbag --build "Source Code"
-          mv "Source Code/build/web" .
+          mkdir -p dist
+          cp -r "Source Code/build/web/." dist/
+
+      - name: Apply Theme Styling
+        run: |
+          # Inject custom CSS into the generated index.html
+          sed -i 's|</head>|<style>\
+            * { font-family: "Segoe UI", sans-serif; }\
+            body { background: #0a0a0a !important; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }\
+            button, input, [onclick], div[style*="background"] { background: #1a1a1a !important; background-image: none !important; color: #fff !important; border: 2px solid #444 !important; border-radius: 12px !important; padding: 18px 60px !important; font-size: 16px !important; font-weight: 600 !important; letter-spacing: 2px !important; text-transform: uppercase !important; cursor: pointer !important; box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important; }\
+            button:hover, input:hover, [onclick]:hover { border-color: #00ff7f !important; box-shadow: 0 6px 30px rgba(0,255,127,0.3) !important; }\
+            #status, #output, pre, .console { display: none !important; visibility: hidden !important; }\
+          </style></head>|' dist/index.html
 
       - name: Upload Project
         uses: actions/upload-pages-artifact@v3
         with:
-          path: web
+          path: dist
 
   deploy:
     environment:
