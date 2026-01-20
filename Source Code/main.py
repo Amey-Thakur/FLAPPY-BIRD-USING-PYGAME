@@ -12,7 +12,7 @@
 #   - Amey Thakur:  https://github.com/Amey-Thakur
 #   - Mega Satish:  https://github.com/msatmod
 # ============================================================================
-# title: AMEY & MEGA
+# title: FLAPPY BIRD
 # icon: favicon.png
 
 import asyncio  # Asynchronous I/O for WebAssembly compatibility
@@ -216,6 +216,14 @@ pygame.init()
 # Display Setup
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Flappy Bird - Amey & Mega")
+
+# Icon Setup
+try:
+    icon_surface = pygame.image.load('favicon.png')
+    pygame.display.set_icon(icon_surface)
+except Exception as e:
+    print(f"Warning: Could not load icon ({e})")
+
 clock = pygame.time.Clock()
 
 # Typography
