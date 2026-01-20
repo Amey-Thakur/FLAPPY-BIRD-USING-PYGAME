@@ -31,8 +31,8 @@ jobs:
 
       - name: Build with pygbag
         run: |
-          pygbag --build SourceCode
-          mv SourceCode/build/web .
+          pygbag --build "Source Code"
+          mv "Source Code/build/web" .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
