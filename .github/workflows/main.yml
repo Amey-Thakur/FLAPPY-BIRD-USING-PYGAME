@@ -34,7 +34,7 @@ jobs:
           pygbag --build "Source Code"
           mv "Source Code/build/web" .
 
-      - name: Upload artifact
+      - name: Upload Project
         uses: actions/upload-pages-artifact@v3
         with:
           path: web
