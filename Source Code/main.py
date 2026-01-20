@@ -12,7 +12,7 @@
 #   - Amey Thakur:  https://github.com/Amey-Thakur
 #   - Mega Satish:  https://github.com/msatmod
 # ============================================================================
-# title: FLAPPY BIRD
+# title: AMEY & MEGA
 # icon: favicon.png
 
 import asyncio  # Asynchronous I/O for WebAssembly compatibility
