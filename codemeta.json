@@ -1,0 +1,45 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "name": "FLAPPY-BIRD-USING-PYGAME",
+    "description": "A high-fidelity recreation of the Flappy Bird game, engineered with Python and optimized for game mechanics study.",
+    "identifier": "FLAPPY-BIRD-USING-PYGAME",
+    "license": "https://spdx.org/licenses/MIT.html",
+    "programmingLanguage": [
+        "Python",
+        "Pygame"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Amey",
+            "familyName": "Thakur",
+            "id": "https://orcid.org/0000-0001-5644-1575",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Terna Engineering College"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Mega",
+            "familyName": "Satish",
+            "id": "https://orcid.org/0000-0002-1430-4961",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Terna Engineering College"
+            }
+        }
+    ],
+    "dateReleased": "2021-06-30",
+    "codeRepository": "https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME",
+    "developmentStatus": "complete",
+    "applicationCategory": "Arcade Game / Simulation",
+    "keywords": [
+        "Flappy Bird",
+        "Arcade",
+        "Python",
+        "Pygame",
+        "Terna Engineering College"
+    ]
+}
