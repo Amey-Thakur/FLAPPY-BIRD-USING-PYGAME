@@ -342,6 +342,22 @@ async def main():
                     score               = 0
                     score_sound_countdown = 100
 
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                # Flap Mechanic (Mouse)
+                if game_active:
+                    bird_movement = 0
+                    bird_movement -= FLAP_STRENGTH
+                    flap_sound.play()
+                
+                # Restart Mechanic (Mouse)
+                else:
+                    game_active         = True
+                    pipe_list.clear() # Reset obstacles
+                    bird_rectangle.center = (100, 512)
+                    bird_movement       = 0
+                    score               = 0
+                    score_sound_countdown = 100
+
             if event.type == SPAWNPIPE:
                 pipe_list.extend(create_pipe())
 
