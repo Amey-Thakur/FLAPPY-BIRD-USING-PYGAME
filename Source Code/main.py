@@ -1,18 +1,18 @@
 # ============================================================================
 # FLAPPY BIRD GAME
 # ============================================================================
-# A faithful recreation of the classic Flappy Bird game using the Pygame library.
+# A high-fidelity reconstruction of the mobile arcade classic.
 # Features real-time physics, sprite animation, and high score persistence.
 #
 # Authors:          Amey Thakur & Mega Satish
-# Date:             Jun 30, 2021
+# Date:             June 30, 2021
 # License:          MIT License
 # Repository:       https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME
 # Profiles:
 #   - Amey Thakur:  https://github.com/Amey-Thakur
 #   - Mega Satish:  https://github.com/msatmod
 # ============================================================================
-# title: FLAPPY BIRD
+# title: AMEY & MEGA
 # icon: favicon.png
 
 import asyncio  # Asynchronous I/O for WebAssembly compatibility
