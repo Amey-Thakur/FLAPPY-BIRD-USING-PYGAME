@@ -51,6 +51,7 @@
 The simulation is governed by strict **computational design patterns** ensuring fidelity and responsiveness:
 *   **Gravity Simulation**: The engine implements a constant downward acceleration vector, countered by high-impulse "flapping" events that calculate instantaneous upward velocity.
 *   **Collision Heuristics**: Utilizes pixel-perfect or AABB collision logic to handle high-frequency interactions between the bird sprite and procedurally generated pipe obstacles.
+*   **Direct Manipulation**: Input handling supports both continuous key-state (Space) and coordinate-base (Mouse) control schemes, ensuring **zero-latency** response critical for high-frequency gameplay.
 *   **Procedural Generation**: Obstacles are spawned with stochastic height variations, ensuring a non-repetitive gameplay loop while maintaining tight performance constraints.
 
 > [!TIP]
@@ -73,7 +74,7 @@ The simulation is governed by strict **computational design patterns** ensuring 
 | **State Management** | Modular architecture handling Start, Play, and Game Over transitions. |
 | **Adaptive Aesthetics** | Interactive **Day/Night Cycle** transitions based on score milestones. |
 | **UI System** | Clean, minimalist interface focusing on core interactive performance. |
-| **Responsive Input** | Zero-latency event polling for precise high-frequency tapping. |
+| **Responsive Input** | **Multi-modal Input** (Space & Mouse) with zero-latency polling for precise interaction. |
 
 > [!NOTE]
 > ### Interactive Polish: The Momentum Singularity
