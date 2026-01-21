@@ -5,7 +5,7 @@
 # Features real-time physics, sprite animation, and high score persistence.
 #
 # Authors:          Amey Thakur & Mega Satish
-# Date:             June 30, 2021
+# Date:             Jun 30, 2021
 # License:          MIT License
 # Repository:       https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME
 # Profiles:
