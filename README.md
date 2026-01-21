@@ -1,97 +1,93 @@
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME">
-    <img src="https://raw.githubusercontent.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/main/Source%20Code/favicon.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">FLAPPY-BIRD-USING-PYGAME</h3>
+  <a name="readme-top"></a>
+  # Flappy Bird
 
-  <p align="center">
-    A high-fidelity recreation of the Flappy Bird game, engineered with Python and optimized for game mechanics study.
-    <br />
-    <a href="https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/tree/main/docs"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME">View Demo</a>
-    ·
-    <a href="https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/issues">Request Feature</a>
-  </p>
-</div>
+  [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
+  ![Status](https://img.shields.io/badge/Status-Completed-success)
+  [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20Pygame-blueviolet)](https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME)
+  [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME)
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#python-principles">Python Principles</a></li>
-        <li><a href="#visual-walkthrough">Visual Walkthrough</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#technical-architecture">Technical Architecture</a>
-      <ul>
-        <li><a href="#tech-stack">Tech Stack</a></li>
-        <li><a href="#project-structure">Project Structure</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage-guidelines">Usage Guidelines</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#authors">Authors</a></li>
-  </ol>
-</details>
+  A high-fidelity **Python** + **Pygame** implementation of the Flappy Bird arcade classic, engineered with pixel-perfect collision physics and a responsive game loop.
 
-<!-- ABOUT THE PROJECT -->
-<a name="about-the-project"></a>
-## About The Project
+  **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME/)**
 
-<!-- OVERVIEW -->
-<a name="overview"></a>
-### Overview
-
-**Flappy Bird** is a digital implementation of the side-scrolling arcade game, designed to demonstrate core game engine mechanics including gravity simulation, collision detection, and procedural generation. The application serves as a digital study into interactive system architecture, brought to life using Python.
-
-### Python Principles
-The development of this interface was guided by core **Python Development** paradigms:
-*   **Object-Oriented Design**: Encapsulates game entities (Bird, Pipes, Ground) into classes to manage state and behavior independently.
-*   **Event-Driven Programming**: Utilizes the Pygame event loop to handle user inputs and system updates in real-time.
-
-> [!TIP]
-> **Game Physics Dynamics**
->
-> The design utilizes pixel-perfect **Collision Detection** and gravity simulation. By providing immediate visual feedback for user interactions (jump) and state changes (crash), the interface ensures a responsive and challenging gameplay experience.
-
-<!-- VISUAL WALKTHROUGH -->
-<a name="visual-walkthrough"></a>
-### Visual Walkthrough
-
-<div align="center"> 
-  <img src="https://raw.githubusercontent.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/main/Source%20Code/assets/background-day.png" alt="Gameplay Day" width="40%">
-  <img src="https://raw.githubusercontent.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME/main/Source%20Code/assets/background-night.png" alt="Gameplay Night" width="40%">
 </div>
 
 ---
 
-<!-- TECHNICAL ARCHITECTURE -->
-<a name="technical-architecture"></a>
-## Technical Architecture
+<div align="center">
 
-<!-- TECH STACK -->
-<a name="tech-stack"></a>
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Walkthrough](#results) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+
+</div>
+
+---
+
+<!-- AUTHORS -->
+<div align="center">
+
+  <a name="authors"></a>
+  ## Authors
+
+| <a href="https://github.com/Amey-Thakur"><img src="https://github.com/Amey-Thakur.png" width="150" height="150" alt="Amey Thakur"></a><br>[**Amey Thakur**](https://github.com/Amey-Thakur)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) | <a href="https://github.com/msatmod"><img src="Mega/Mega.png" width="150" height="150" alt="Mega Satish"></a><br>[**Mega Satish**](https://github.com/msatmod)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--1844--9557-green.svg)](https://orcid.org/0000-0002-1844-9557) |
+| :---: | :---: |
+
+</div>
+
+> [!IMPORTANT]
+> ### 🤝🏻 Special Acknowledgement
+> *Special thanks to **[Mega Satish](https://github.com/msatmod)** for her meaningful contributions, guidance, and support that helped shape this work.*
+
+---
+
+<!-- OVERVIEW -->
+<a name="overview"></a>
+## Overview
+
+**Flappy Bird** is a precision-engineered simulation of the side-scrolling arcade classic, rebuilt using **Python** and **Pygame** with a focus on physics-driven interactive design. By leveraging **Object-Oriented Programming (OOP)**, the engine manages complex state transitions between gravity-induced acceleration and user-triggered momentum, delivering a responsive and challenging study into game loop architecture.
+
+### core mechanics
+The simulation is governed by strict **computational design patterns** ensuring fidelity and responsiveness:
+*   **Gravity Simulation**: The engine implements a constant downward acceleration vector, countered by high-impulse "flapping" events that calculate instantaneous upward velocity.
+*   **Collision Heuristics**: Utilizes pixel-perfect or AABB collision logic to handle high-frequency interactions between the bird sprite and procedurally generated pipe obstacles.
+*   **Procedural Generation**: Obstacles are spawned with stochastic height variations, ensuring a non-repetitive gameplay loop while maintaining tight performance constraints.
+
+> [!TIP]
+> **Sensory Feedback Integration**
+>
+> To maximize state clarity, the system employs **multi-modal feedback**. Instantaneous audio triggers synchronize with physics events (flap, hit, score), while visual state changes—such as the day/night cycle transition—strictly couple environment aesthetics with progression metrics. This ensures the user's mental model is constantly synchronized with the underlying game state without reliance on intrusive UI elements.
+
+---
+
+<!-- FEATURES -->
+<a name="features"></a>
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| **Physics Engine** | High-precision gravity and momentum calculation for authentic arcade feel. |
+| **Procedural Generation**| Dynamic obstacle spawning with variable gap logic for infinite replayability. |
+| **Collision Tracking** | Advanced **Sprite Collision Logic** ensuring fair and precise hit detection. |
+| **Audio Immersion** | Event-driven sound engine synchronized with physics and scoring events. |
+| **State Management** | Modular architecture handling Start, Play, and Game Over transitions. |
+| **Adaptive Aesthetics** | Interactive **Day/Night Cycle** transitions based on score milestones. |
+| **UI System** | Clean, minimalist interface focusing on core interactive performance. |
+| **Responsive Input** | Zero-latency event polling for precise high-frequency tapping. |
+
+> [!NOTE]
+> ### Interactive Polish: The Momentum Singularity
+> We have engineered a **Physics-Driven State Manager** that calibrates gravitational pull against vertical impulse to simulate weight. The visual language focuses on the vibrant "8-bit" aesthetic, ensuring maximum focus on the interactive trajectory and timing.
+
 ### Tech Stack
+- **Languages**: Python 3.11
+- **Logic**: **Pygame Engine** (Asynchronous Loop & Physics Engine)
+- **Imaging**: **Sprite-Based Rendering** (Optimized Bitmapped Graphics)
+- **UI System**: Premium Retro Graphics (Custom Python Canvas)
+- **Deployment**: GitHub Actions (CI/CD Build Pipeline)
+- **Hosting**: GitHub Pages
 
-| Component | Technology | Description |
-| :--- | :--- | :--- |
-| **Language** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) | Core programming logic and state management. |
-| **Engine** | ![Pygame](https://img.shields.io/badge/Pygame-333333?style=flat&logo=python&logoColor=white) | Graphics rendering, audio playback, and event handling. |
-| **Documentation** | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white) | Technical specifications and project guides. |
+---
 
 <!-- STRUCTURE -->
 <a name="project-structure"></a>
@@ -102,7 +98,7 @@ FLAPPY-BIRD-USING-PYGAME/
 │
 ├── .github/                         # Deployment & Automation Layer
 │   └── workflows/
-│       └── main.yml                 # CI/CD Pipeline
+│       └── main.yml                 # CI/CD Pipeline (Build & Deploy)
 │
 ├── docs/                            # Technical Documentation
 │   └── SPECIFICATION.md             # Architecture & Design Specification
@@ -116,7 +112,7 @@ FLAPPY-BIRD-USING-PYGAME/
 │   ├── sound/                       # Audio Assets (WAV/OGG)
 │   ├── 04B_19.TTF                   # Game Font
 │   ├── favicon.png                  # System Identity Icon
-│   └── main.py                      # Core Game Logic
+│   └── main.py                      # Core Game Logic (Asynchronous Entry Point)
 │
 ├── .gitattributes                   # Git configuration
 ├── .gitignore                       # Repository Filters
@@ -129,31 +125,89 @@ FLAPPY-BIRD-USING-PYGAME/
 
 ---
 
-<!-- USAGE GUIDELINES -->
-<a name="usage-guidelines"></a>
+<!-- RESULTS -->
+<a name="results"></a>
+## Visual Walkthrough
+
+<div align="center">
+  <b>System Initialization: Landing</b>
+  <br>
+  <i>Initial game state with high-contrast asset loading.</i>
+  <br><br>
+  <img src="Source Code/assets/message.png" alt="Landing Screen" width="50%">
+  <br><br><br>
+
+  <b>Active Gameplay: Diurnal State</b>
+  <br>
+  <i>Diurnal environment aesthetics with real-time physics tracking.</i>
+  <br><br>
+  <img src="Source Code/assets/background-day.png" alt="Day Gameplay" width="90%">
+  <br><br><br>
+
+  <b>Active Gameplay: Nocturnal State</b>
+  <br>
+  <i>Nocturnal environment transition triggered by progression.</i>
+  <br><br>
+  <img src="Source Code/assets/background-night.png" alt="Night Gameplay" width="90%">
+  <br><br><br>
+
+  <b>Collision State: Game Over</b>
+  <br>
+  <i>Interactive collision feedback and performance summary.</i>
+  <br><br>
+  <img src="Source Code/assets/gameover.png" alt="Game Over" width="50%">
+</div>
+
+---
+
+<!-- QUICK START -->
+<a name="quick-start"></a>
+## Quick Start
+
+### 1. Prerequisites
+- **Python 3.11+**: Required for runtime execution. [Download Python](https://www.python.org/downloads/)
+- **Git**: For version control and cloning. [Download Git](https://git-scm.com/downloads)
+
+> [!WARNING]
+> **Local Execution**
+>
+> For local development, ensure that the `pygame` library is correctly installed. Running the project locally may require specialized asset handling to ensure path consistency across different operating systems.
+
+### 2. Installation
+Clone the repository and install the necessary dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME.git
+cd FLAPPY-BIRD-USING-PYGAME
+
+# Install Pygame (Community Edition recommended for best performance)
+pip install pygame-ce
+```
+
+### 3. Execution
+Launch the application directly as a high-performance desktop application:
+```bash
+python "Source Code/main.py"
+```
+
+---
+
+<!-- =========================================================================================
+                                     USAGE SECTION
+     ========================================================================================= -->
 ## Usage Guidelines
 
 This repository is openly shared to support learning and knowledge exchange across the academic community.
 
 **For Students**  
-Use this project as reference material for understanding game engine logic, object-oriented programming in Python, and Python principles.
+Use this project as reference material for understanding interactive system design, game development patterns, and Python principles. The source code is available for study to facilitate self-paced learning and exploration of user-centric design patterns.
 
 **For Educators**  
-This project may serve as a practical lab example or supplementary teaching resource for Python Programming and Game Development Laboratory courses.
+This project may serve as a practical lab example or supplementary teaching resource for Game Development and Python Programming courses. Attribution is appreciated when utilizing content.
 
----
-
-<!-- CONTRIBUTING -->
-<a name="contributing"></a>
-## Contributing
-
-Contributions are strictly limited to documentation fixes or academic updates. Code modifications are restricted to preserve the archival state of the project.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+**For Researchers**  
+The documentation and design approach may provide insights into academic project structuring and interactive application development.
 
 ---
 
@@ -163,20 +217,50 @@ Contributions are strictly limited to documentation fixes or academic updates. C
 
 This repository and all its creative and technical assets are made available under the **MIT License**. See the [LICENSE](LICENSE) file for complete terms.
 
+> [!NOTE]
+> **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original authors.
+
 Copyright © 2021 Amey Thakur & Mega Satish
 
 ---
 
-<!-- AUTHORS -->
-<a name="authors"></a>
-## Authors
+<!-- ABOUT -->
+<a name="about-this-repository"></a>
+## About This Repository
 
-**Terna Engineering College | Computer Engineering | Batch of 2022**
+**Created & Maintained by**: [Amey Thakur](https://github.com/Amey-Thakur) & [Mega Satish](https://github.com/msatmod)  
+**Academic Journey**: Bachelor of Engineering in Computer Engineering (2018-2022)  
+**Institution**: [Terna Engineering College](https://ternaengg.ac.in/), Navi Mumbai  
+**University**: [University of Mumbai](https://mu.ac.in/)
 
-| <a href="https://github.com/Amey-Thakur"><img src="https://github.com/Amey-Thakur.png" width="150" height="150" alt="Amey Thakur"></a><br>[**Amey Thakur**](https://github.com/Amey-Thakur)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) | <a href="https://github.com/msatmod"><img src="Mega/Mega.png" width="150" height="150" alt="Mega Satish"></a><br>[**Mega Satish**](https://github.com/msatmod)<br><br>[![ORCID](https://img.shields.io/badge/ORCID-0000--0002--1844--9557-green.svg)](https://orcid.org/0000-0002-1844-9557) |
-| :---: | :---: |
+This project features **Flappy Bird**, a high-performance reconstruction of the mobile arcade classic. It represents a personal exploration into **Python**-based game development and interactive physics simulation.
+
+**Connect:** [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
+
+### Acknowledgments
+
+Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her exceptional collaboration and scholarly partnership during the development of this game design project. Her constant support, technical clarity, and dedication to software quality were instrumental in achieving the system's functional objectives. Learning alongside her was a transformative experience; her thoughtful approach to problem-solving and steady encouragement turned complex requirements into meaningful learning moments. This work reflects the growth and insights gained from our side-by-side academic journey. Thank you, Mega, for everything you shared and taught along the way.
+
+Special thanks to the **mentors and peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
+
+---
+
+<div align="center">
+
+  [↑ Back to Top](#readme-top)
+
+  [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Walkthrough](#results) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+
+  <br>
+
+  🐦 **[FLAPPY-BIRD](https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME)**
+
+  ---
+
+  ### 🎓 [Computer Engineering Repository](https://github.com/Amey-Thakur/COMPUTER-ENGINEERING)
+
+  **Computer Engineering (B.E.) - University of Mumbai**
+
+  *Semester-wise curriculum, laboratories, projects, and academic notes.*
 
 </div>
-
-> [!IMPORTANT]
-> **Archival Note**: This repository is preserved as a static record of academic work. Active development has concluded.
