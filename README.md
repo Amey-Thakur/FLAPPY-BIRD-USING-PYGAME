@@ -107,6 +107,12 @@ FLAPPY-BIRD-USING-PYGAME/
 │   ├── Filly.jpg                    # Companion (Filly)
 │   └── Mega.png                     # Author Profile Image (Mega Satish)
 │
+├── screenshots/                     # Project Visualization Gallery
+│   ├── 01-landing-state.png         # Main Launch State
+│   ├── 02-active-gameplay.png       # Physics & Interaction
+│   ├── 03-progressive-score.png     # State Tracking
+│   └── 04-high-score-persistence.png # Persistence Layer
+│
 ├── Source Code/                     # Primary Application Layer
 │   ├── assets/                      # Visual Assets (Sprites)
 │   ├── sound/                       # Audio Assets (WAV/OGG)
@@ -130,32 +136,32 @@ FLAPPY-BIRD-USING-PYGAME/
 ## Visual Walkthrough
 
 <div align="center">
-  <b>System Initialization: Landing</b>
+  <b>Main Landing: System Initialization</b>
   <br>
   <i>Initial game state with high-contrast asset loading.</i>
   <br><br>
-  <img src="Source Code/assets/message.png" alt="Landing Screen" width="50%">
+  <img src="screenshots/01-landing-state.png" alt="Landing Screen" width="90%">
   <br><br><br>
 
-  <b>Active Gameplay: Diurnal State</b>
+  <b>Active Gameplay: Kinetic Physics</b>
   <br>
-  <i>Diurnal environment aesthetics with real-time physics tracking.</i>
+  <i>Real-time gravity calculation and impulse-based interaction.</i>
   <br><br>
-  <img src="Source Code/assets/background-day.png" alt="Day Gameplay" width="90%">
+  <img src="screenshots/02-active-gameplay.png" alt="Active Gameplay" width="90%">
   <br><br><br>
 
-  <b>Active Gameplay: Nocturnal State</b>
+  <b>State Tracking: Score Progression</b>
   <br>
-  <i>Nocturnal environment transition triggered by progression.</i>
+  <i>Procedural obstacle navigation and scoring heuristics.</i>
   <br><br>
-  <img src="Source Code/assets/background-night.png" alt="Night Gameplay" width="90%">
+  <img src="screenshots/03-progressive-score.png" alt="Progressive Score" width="90%">
   <br><br><br>
 
-  <b>Collision State: Game Over</b>
+  <b>Performance Summary: Persistence Layer</b>
   <br>
-  <i>Interactive collision feedback and performance summary.</i>
+  <i>High-score record persistence via system-state management.</i>
   <br><br>
-  <img src="Source Code/assets/gameover.png" alt="Game Over" width="50%">
+  <img src="screenshots/04-high-score-persistence.png" alt="High Score" width="90%">
 </div>
 
 ---
