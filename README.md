@@ -72,7 +72,6 @@ The simulation is governed by strict **computational design patterns** ensuring 
 | **Collision Tracking** | Advanced **Sprite Collision Logic** ensuring fair and precise hit detection. |
 | **Audio Immersion** | Event-driven sound engine synchronized with physics and scoring events. |
 | **State Management** | Modular architecture handling Start, Play, and Game Over transitions. |
-
 | **UI System** | Clean, minimalist interface focusing on core interactive performance. |
 | **Responsive Input** | **Multi-modal Input** (Space & Mouse) with zero-latency polling for precise interaction. |
 
