@@ -57,7 +57,7 @@ The simulation is governed by strict **computational design patterns** ensuring 
 > [!TIP]
 > **Sensory Feedback Integration**
 >
-> To maximize state clarity, the system employs **multi-modal feedback**. Instantaneous audio triggers synchronize with physics events (flap, hit, score), while visual state changes—such as the day/night cycle transition—strictly couple environment aesthetics with progression metrics. This ensures the user's mental model is constantly synchronized with the underlying game state without reliance on intrusive UI elements.
+> To maximize state clarity, the system employs **multi-modal feedback**. Instantaneous audio triggers synchronize with physics events (flap, hit, score). This ensures the user's mental model is constantly synchronized with the underlying game state without reliance on intrusive UI elements.
 
 ---
 
@@ -72,7 +72,7 @@ The simulation is governed by strict **computational design patterns** ensuring 
 | **Collision Tracking** | Advanced **Sprite Collision Logic** ensuring fair and precise hit detection. |
 | **Audio Immersion** | Event-driven sound engine synchronized with physics and scoring events. |
 | **State Management** | Modular architecture handling Start, Play, and Game Over transitions. |
-| **Adaptive Aesthetics** | Interactive **Day/Night Cycle** transitions based on score milestones. |
+
 | **UI System** | Clean, minimalist interface focusing on core interactive performance. |
 | **Responsive Input** | **Multi-modal Input** (Space & Mouse) with zero-latency polling for precise interaction. |
 
