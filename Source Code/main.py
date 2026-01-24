@@ -358,7 +358,7 @@ async def main():
     The main game loop, utilizing asyncio for browser compatibility.
     Handles events, updates game state, and renders the frame.
     """
-    global bird_movement, game_active, score, high_score, bird_index, bird_surface, bird_rectangle, pipe_list, floor_x_position, score_sound_countdown
+    global bird_movement, game_active, score, high_score, bird_index, bird_surface, bird_rectangle, pipe_list, floor_x_position
 
     while True:
         # Event Handling
@@ -431,14 +431,16 @@ async def main():
             draw_pipes(pipe_list)
 
             # 5. Scoring System
-            score += 0.01  # Incremental score for survival
+            # Check if bird passed the pipe (Pipe Center X passes 100)
+            for pipe in pipe_list:
+                if pipe.centerx == 100:
+                    score += 0.5 
+                    if score % 1 == 0:
+                        score_sound.play()
+            
             score_display('main_game')
             
-            # 6. Audio Feedback (Score)
-            score_sound_countdown -= 1
-            if score_sound_countdown <= 0:
-                score_sound.play()
-                score_sound_countdown = 100
+            # 6. Audio Feedback (Score) - Handled above
         else:
             # --- Game Over State ---
             screen.blit(game_over_surface, game_over_rectangle)
