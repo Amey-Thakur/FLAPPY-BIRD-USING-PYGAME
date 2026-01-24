@@ -47,18 +47,39 @@ def draw_floor():
     screen.blit(floor_surface, (floor_x_position, 900))
     screen.blit(floor_surface, (floor_x_position + 576, 900))
 
-    # Authorship Text (Rendered dynamically to prevent crash)
+    # Render static text on top of the floor
+    # Content and Colors
+    # Text structure: [ ("Text", (R, G, B)) ]
+    text_parts = [
+        ("Developed by ", (255, 255, 255)),           # White
+        ("Amey Thakur ", (85, 172, 238)),             # Sky Blue
+        ("& ", (255, 255, 255)),                      # White
+        ("Mega Satish", (85, 172, 238))               # Sky Blue
+    ]
+
+    # Calculate Total Width for Centering
+    total_width = 0
+    surfaces = []
+    for text, color in text_parts:
+        surface = footer_font.render(text, True, color)
+        shadow = footer_font.render(text, True, (0, 0, 0)) # Black shadow
+        width = surface.get_width()
+        total_width += width
+        surfaces.append( (surface, shadow, width) )
+
+    # Starting X Position (Centered)
+    current_x = (SCREEN_WIDTH - total_width) // 2
+    text_y = 962
     
-    # "Developed by" in White
-    dev_text = footer_font.render("Developed by ", True, (255, 255, 255))
-    dev_rect = dev_text.get_rect(midright=(288, 962))
-    
-    # "Amey Thakur & Mega Satish" in Blue (Sky Blue: 85, 172, 238)
-    name_text = footer_font.render("Amey Thakur & Mega Satish", True, (85, 172, 238))
-    name_rect = name_text.get_rect(midleft=(288, 962))
-    
-    screen.blit(dev_text, dev_rect)
-    screen.blit(name_text, name_rect)
+    # Render Loop
+    for surface, shadow, width in surfaces:
+        surface_rect = surface.get_rect(midleft=(current_x, text_y))
+        shadow_rect = shadow.get_rect(midleft=(current_x + 2, text_y + 2)) # Offset shadow
+        
+        screen.blit(shadow, shadow_rect) # Draw shadow first
+        screen.blit(surface, surface_rect) # Draw text on top
+        
+        current_x += width
 
 
 def create_pipe():
@@ -228,7 +249,7 @@ pygame.init()
 
 # Display Setup
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Flappy Bird - Amey & Mega")
+pygame.display.set_caption("AMEY & MEGA")
 
 # Icon Setup
 try:
