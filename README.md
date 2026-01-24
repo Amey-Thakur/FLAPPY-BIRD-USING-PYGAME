@@ -167,7 +167,7 @@ FLAPPY-BIRD-USING-PYGAME/
 
   <b>Additional Views: Gameplay & Mechanics</b>
   <br>
-  <i>Showcasing dynamic obstacle generation and day/night transitions.</i>
+  <i>Showcasing dynamic obstacle generation.</i>
   <br><br>
   <img src="screenshots/05-gameplay-pipes.png" alt="Gameplay Variation" width="45%">
   <img src="screenshots/06-gameplay-end.png" alt="Mechanics Detail" width="45%">
