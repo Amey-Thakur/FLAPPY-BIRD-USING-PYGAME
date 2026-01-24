@@ -141,28 +141,36 @@ FLAPPY-BIRD-USING-PYGAME/
   <br>
   <i>Initial game state with high-contrast asset loading.</i>
   <br><br>
-  <img src="screenshots/01-landing-state.png" alt="Landing Screen" width="90%">
+  <img src="screenshots/01-home-screen.png" alt="Landing Screen" width="90%">
   <br><br><br>
 
   <b>Active Gameplay: Kinetic Physics</b>
   <br>
   <i>Real-time gravity calculation and impulse-based interaction.</i>
   <br><br>
-  <img src="screenshots/02-active-gameplay.png" alt="Active Gameplay" width="90%">
+  <img src="screenshots/03-gameplay-start.png" alt="Active Gameplay" width="90%">
   <br><br><br>
 
   <b>State Tracking: Score Progression</b>
   <br>
   <i>Procedural obstacle navigation and scoring heuristics.</i>
   <br><br>
-  <img src="screenshots/03-progressive-score.png" alt="Progressive Score" width="90%">
+  <img src="screenshots/04-gameplay-mid.png" alt="Progressive Score" width="90%">
   <br><br><br>
 
   <b>Performance Summary: Persistence Layer</b>
   <br>
   <i>High-score record persistence via system-state management.</i>
   <br><br>
-  <img src="screenshots/04-high-score-persistence.png" alt="High Score" width="90%">
+  <img src="screenshots/02-final-score.png" alt="High Score" width="90%">
+  <br><br><br>
+
+  <b>Additional Views: Gameplay & Mechanics</b>
+  <br>
+  <i>Showcasing dynamic obstacle generation and day/night transitions.</i>
+  <br><br>
+  <img src="screenshots/05-gameplay-pipes.png" alt="Gameplay Variation" width="45%">
+  <img src="screenshots/06-gameplay-end.png" alt="Mechanics Detail" width="45%">
 </div>
 
 ---
