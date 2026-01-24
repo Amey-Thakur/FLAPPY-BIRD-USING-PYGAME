@@ -244,15 +244,15 @@ try:
     try:
         # Try finding the font with uppercase extension (Primary check)
         game_font = pygame.font.Font('04B_19.TTF', 40)
-        footer_font = pygame.font.Font('04B_19.TTF', 25)
+        footer_font = pygame.font.Font('04B_19.TTF', 20)
     except:
         # Fallback to lowercase extension (Secondary check)
         game_font = pygame.font.Font('04B_19.ttf', 40)
-        footer_font = pygame.font.Font('04B_19.ttf', 25)
+        footer_font = pygame.font.Font('04B_19.ttf', 20)
 except:
     print("Warning: Custom font not found. Using system font.")
     game_font = pygame.font.SysFont('Arial', 40, bold=True)
-    footer_font = pygame.font.SysFont('Arial', 25, bold=True)
+    footer_font = pygame.font.SysFont('Arial', 20, bold=True)
 bird_movement       = 0
 game_active         = True
 score               = 0
