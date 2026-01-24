@@ -47,6 +47,19 @@ def draw_floor():
     screen.blit(floor_surface, (floor_x_position, 900))
     screen.blit(floor_surface, (floor_x_position + 576, 900))
 
+    # Authorship Text (Rendered dynamically to prevent crash)
+    
+    # "Developed by" in White
+    dev_text = footer_font.render("Developed by ", True, (255, 255, 255))
+    dev_rect = dev_text.get_rect(midright=(288, 962))
+    
+    # "Amey Thakur & Mega Satish" in Blue (Sky Blue: 85, 172, 238)
+    name_text = footer_font.render("Amey Thakur & Mega Satish", True, (85, 172, 238))
+    name_rect = name_text.get_rect(midleft=(288, 962))
+    
+    screen.blit(dev_text, dev_rect)
+    screen.blit(name_text, name_rect)
+
 
 def create_pipe():
     """
@@ -228,11 +241,18 @@ clock = pygame.time.Clock()
 
 # Typography
 try:
-    game_font = pygame.font.Font('04B_19.ttf', 40)
-except FileNotFoundError:
+    try:
+        # Try finding the font with uppercase extension (Primary check)
+        game_font = pygame.font.Font('04B_19.TTF', 40)
+        footer_font = pygame.font.Font('04B_19.TTF', 25)
+    except:
+        # Fallback to lowercase extension (Secondary check)
+        game_font = pygame.font.Font('04B_19.ttf', 40)
+        footer_font = pygame.font.Font('04B_19.ttf', 25)
+except:
+    print("Warning: Custom font not found. Using system font.")
     game_font = pygame.font.SysFont('Arial', 40, bold=True)
-
-# Game State Variables
+    footer_font = pygame.font.SysFont('Arial', 25, bold=True)
 bird_movement       = 0
 game_active         = True
 score               = 0
