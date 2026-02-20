@@ -18,6 +18,7 @@
 import asyncio  # Asynchronous I/O for WebAssembly compatibility
 import pygame
 import sys
+import os
 import random
 
 # ============================================================================
@@ -287,57 +288,65 @@ score_sound_countdown = 100
 # ASSET MANAGEMENT
 # ============================================================================
 
-try:
-    # Textures
-    background_surface = pygame.image.load('assets/background-day.png').convert()
-    background_surface = pygame.transform.scale2x(background_surface)
+def load_texture(path, alpha=False):
+    """Robust texture loader with fallback."""
+    try:
+        if alpha:
+            return pygame.image.load(path).convert_alpha()
+        else:
+            return pygame.image.load(path).convert()
+    except Exception as e:
+        print(f"Warning: Could not load texture {path} ({e})")
+        # Return a visible fallback surface
+        surf = pygame.Surface((32, 32))
+        surf.fill((255, 0, 255) if alpha else (135, 206, 235))
+        return surf
 
-    floor_surface = pygame.image.load('assets/base.png').convert()
-    floor_surface = pygame.transform.scale2x(floor_surface)
+class MockSound:
+    """Silent sound object for fallback."""
+    def play(self): pass
+    def set_volume(self, volume): pass
 
-    # Bird Animation Frames
-    bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
-    bird_midflap  = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
-    bird_upflap   = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
-    bird_frames   = [bird_downflap, bird_midflap, bird_upflap]
-    bird_index    = 0
-    bird_surface  = bird_frames[bird_index]
-    bird_rectangle= bird_surface.get_rect(center=(100, 512))
-
-    # Obstacles & UI
-    pipe_surface    = pygame.image.load('assets/pipe-green.png')
-    pipe_surface    = pygame.transform.scale2x(pipe_surface)
+def load_sound(path):
+    """Loads sound based on platform support (OGG for Web, WAV for Desktop)."""
+    # Detect WebAssembly environment
+    is_web = sys.platform == "emscripten" or "pygbag" in sys.modules
     
-    game_over_surface   = pygame.transform.scale2x(pygame.image.load('assets/message.png').convert_alpha())
-    game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
+    if is_web:
+        path = path.replace('.wav', '.ogg')
+        
+    try:
+        return pygame.mixer.Sound(path)
+    except Exception as e:
+        print(f"Warning: Could not load sound {path} ({e})")
+        return MockSound()
 
-    # Sound Effects
-    flap_sound  = pygame.mixer.Sound('sound/sfx_wing.wav')
-    death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
-    score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
+# --- Load Images ---
+background_surface = load_texture('assets/background-day.png')
+background_surface = pygame.transform.scale2x(background_surface)
 
-except Exception as e:
-    print(f"CRITICAL ERROR: Asset loading failed ({e}). Playing in fallback mode.")
-    # Fallback Assets (Mock generation)
-    background_surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
-    background_surface.fill((30, 30, 30))
-    floor_surface = pygame.Surface((SCREEN_WIDTH, 100))
-    floor_surface.fill((200, 200, 200))
-    bird_surface = pygame.Surface((34, 24))
-    bird_surface.fill((255, 255, 0))
-    bird_rectangle = bird_surface.get_rect(center=(100, 512))
-    bird_frames = [bird_surface]
-    pipe_surface = pygame.Surface((52, 320))
-    pipe_surface.fill((0, 255, 0))
-    game_over_surface = pygame.Surface((200, 50))
-    game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
-    
-    # Sound Mock
-    class MockSound:
-        def play(self): pass
-    flap_sound = MockSound()
-    death_sound = MockSound()
-    score_sound = MockSound()
+floor_surface = load_texture('assets/base.png')
+floor_surface = pygame.transform.scale2x(floor_surface)
+
+# --- Load Bird Frames ---
+bird_downflap = pygame.transform.scale2x(load_texture('assets/bluebird-downflap.png', alpha=True))
+bird_midflap  = pygame.transform.scale2x(load_texture('assets/bluebird-midflap.png', alpha=True))
+bird_upflap   = pygame.transform.scale2x(load_texture('assets/bluebird-upflap.png', alpha=True))
+bird_frames   = [bird_downflap, bird_midflap, bird_upflap]
+bird_index    = 0
+bird_surface  = bird_frames[bird_index]
+bird_rectangle = bird_surface.get_rect(center=(100, 512))
+
+# --- Load Obstacles & UI ---
+pipe_surface = pygame.transform.scale2x(load_texture('assets/pipe-green.png', alpha=True))
+
+game_over_surface   = pygame.transform.scale2x(load_texture('assets/message.png', alpha=True))
+game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
+
+# --- Load Sounds ---
+flap_sound  = load_sound('sound/sfx_wing.wav')
+death_sound = load_sound('sound/sfx_hit.wav')
+score_sound = load_sound('sound/sfx_point.wav')
 
 
 # ============================================================================

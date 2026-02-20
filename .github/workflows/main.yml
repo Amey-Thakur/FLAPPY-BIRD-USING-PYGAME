@@ -29,6 +29,17 @@ jobs:
       - name: Install pygbag
         run: pip install pygbag
 
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Convert WAV audio to OGG (Pygbag requirement)
+        run: |
+          cd "Source Code/sound"
+          for f in *.wav; do
+            ffmpeg -i "$f" -c:a libvorbis -q:a 5 "${f%.wav}.ogg" -y
+          done
+          cd ../..
+
       - name: Build with pygbag
         run: |
           python -m pygbag --build --ume_block 0 --disable-sound-format-error "Source Code"
