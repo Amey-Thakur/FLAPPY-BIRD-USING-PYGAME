@@ -205,6 +205,13 @@ Launch the application directly as a high-performance desktop application:
 python "Source Code/main.py"
 ```
 
+> [!TIP]
+> **Arcade Engine Reconstruction | Flappy Bird**
+> 
+> Experience a high-fidelity **Python** + **Pygame** reconstruction of this mobile classic, featuring an **Object-Oriented** architecture and physics-driven gravity simulation for a responsive and mathematically accurate arcade experience.
+>
+> [**Launch Live Demo**](https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME/)
+
 ---
 
 <!-- =========================================================================================
