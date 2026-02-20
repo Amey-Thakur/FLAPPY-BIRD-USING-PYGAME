@@ -327,7 +327,6 @@ except Exception as e:
     bird_surface.fill((255, 255, 0))
     bird_rectangle = bird_surface.get_rect(center=(100, 512))
     bird_frames = [bird_surface]
-    bird_index = 0
     pipe_surface = pygame.Surface((52, 320))
     pipe_surface.fill((0, 255, 0))
     game_over_surface = pygame.Surface((200, 50))

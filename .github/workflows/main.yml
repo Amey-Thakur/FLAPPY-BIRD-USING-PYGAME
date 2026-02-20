@@ -27,25 +27,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install pygbag
-        run: pip install pygbag
-
-      - name: Install ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
-      - name: Convert WAV to OGG for browser compatibility
-        run: |
-          cd "Source Code/sound"
-          for f in *.wav; do
-            ffmpeg -i "$f" -c:a libvorbis -q:a 5 "${f%.wav}.ogg" -y
-          done
-          rm *.wav
-          cd ../..
-
-      - name: Update sound references in code
-        run: |
-          sed -i "s/sfx_wing.wav/sfx_wing.ogg/g" "Source Code/main.py"
-          sed -i "s/sfx_hit.wav/sfx_hit.ogg/g" "Source Code/main.py"
-          sed -i "s/sfx_point.wav/sfx_point.ogg/g" "Source Code/main.py"
+        run: pip install pygbag==0.8.6
 
       - name: Build with pygbag
         run: |
