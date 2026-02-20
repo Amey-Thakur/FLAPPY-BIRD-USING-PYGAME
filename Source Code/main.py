@@ -37,23 +37,32 @@ PIPE_GAP        = 300       # Vertical space between top and bottom pipes
 
 def load_sound(path):
     """
-    Cross-platform sound loader.
+    Cross-platform sound loader (Bulletproof).
     
     Attempts to load the OGG version first (required for WebAssembly/Pygbag),
     then falls back to the original WAV file (for local desktop execution).
+    If both fail, returns a silent placeholder to prevent crashes.
     
     Parameters:
         path (str): Path to the sound file (with .wav extension).
         
     Returns:
-        pygame.mixer.Sound: The loaded sound object.
+        pygame.mixer.Sound or SilentSound: The loaded sound object.
     """
-    import os
-    ogg_path = os.path.splitext(path)[0] + '.ogg'
+    class SilentSound:
+        """Fallback: a no-op sound object that prevents runtime crashes."""
+        def play(self): pass
+
+    ogg_path = path.replace('.wav', '.ogg')
     try:
         return pygame.mixer.Sound(ogg_path)
-    except:
+    except Exception:
+        pass
+    try:
         return pygame.mixer.Sound(path)
+    except Exception:
+        pass
+    return SilentSound()
 
 def draw_floor():
     """
