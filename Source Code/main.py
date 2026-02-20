@@ -35,31 +35,6 @@ PIPE_GAP        = 300       # Vertical space between top and bottom pipes
 # CORE LOGIC
 # ============================================================================
 
-class SilentSound:
-    """Fallback: a no-op sound object that prevents runtime crashes."""
-    def play(self): pass
-    def set_volume(self, v): pass
-
-
-def load_sound(path):
-    """
-    Cross-platform sound loader (Bulletproof).
-    
-    Attempts to load the OGG version first (required for WebAssembly/Pygbag),
-    then falls back to the original WAV file (for local desktop execution).
-    If both fail, returns a silent placeholder to prevent crashes.
-    """
-    ogg_path = path.replace('.wav', '.ogg')
-    try:
-        return pygame.mixer.Sound(ogg_path)
-    except Exception:
-        pass
-    try:
-        return pygame.mixer.Sound(path)
-    except Exception:
-        pass
-    return SilentSound()
-
 def draw_floor():
     """
     Renders the infinite scrolling floor effect.
@@ -269,10 +244,7 @@ def update_score(current_score, current_high_score):
 # ============================================================================
 
 # Audio Mixer: Pre-init required to avoid audio lag
-try:
-    pygame.mixer.pre_init(44100, -16, 2, 512)
-except Exception:
-    pass
+pygame.mixer.pre_init(frequency=44100, size=16, channels=1, buffer=512)
 pygame.init()
 
 # Display Setup
@@ -314,57 +286,58 @@ score_sound_countdown = 100
 # ============================================================================
 # ASSET MANAGEMENT
 # ============================================================================
-# Each asset is loaded independently. A single failure will not crash others.
 
-# --- Textures ---
 try:
+    # Textures
     background_surface = pygame.image.load('assets/background-day.png').convert()
     background_surface = pygame.transform.scale2x(background_surface)
-except Exception:
-    background_surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
-    background_surface.fill((135, 206, 235))  # Sky blue fallback
 
-try:
     floor_surface = pygame.image.load('assets/base.png').convert()
     floor_surface = pygame.transform.scale2x(floor_surface)
-except Exception:
-    floor_surface = pygame.Surface((SCREEN_WIDTH, 100))
-    floor_surface.fill((200, 180, 100))
 
-# --- Bird Animation Frames ---
-try:
-    bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-downflap.png').convert_alpha())
+    # Bird Animation Frames
+    bird_downflap = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
     bird_midflap  = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
-    bird_upflap   = pygame.transform.scale2x(pygame.image.load('assets/bluebird-upflap.png').convert_alpha())
+    bird_upflap   = pygame.transform.scale2x(pygame.image.load('assets/bluebird-midflap.png').convert_alpha())
     bird_frames   = [bird_downflap, bird_midflap, bird_upflap]
-except Exception:
-    bird_surface_fb = pygame.Surface((34, 24), pygame.SRCALPHA)
-    bird_surface_fb.fill((255, 255, 0))
-    bird_frames = [bird_surface_fb]
+    bird_index    = 0
+    bird_surface  = bird_frames[bird_index]
+    bird_rectangle= bird_surface.get_rect(center=(100, 512))
 
-bird_index     = 0
-bird_surface   = bird_frames[bird_index]
-bird_rectangle = bird_surface.get_rect(center=(100, 512))
-
-# --- Obstacles & UI ---
-try:
-    pipe_surface = pygame.image.load('assets/pipe-green.png')
-    pipe_surface = pygame.transform.scale2x(pipe_surface)
-except Exception:
-    pipe_surface = pygame.Surface((52, 320))
-    pipe_surface.fill((0, 200, 0))
-
-try:
+    # Obstacles & UI
+    pipe_surface    = pygame.image.load('assets/pipe-green.png')
+    pipe_surface    = pygame.transform.scale2x(pipe_surface)
+    
     game_over_surface   = pygame.transform.scale2x(pygame.image.load('assets/message.png').convert_alpha())
     game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
-except Exception:
-    game_over_surface   = pygame.Surface((200, 50), pygame.SRCALPHA)
-    game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
 
-# --- Sound Effects (OGG for web, WAV for local) ---
-flap_sound  = load_sound('sound/sfx_wing.wav')
-death_sound = load_sound('sound/sfx_hit.wav')
-score_sound = load_sound('sound/sfx_point.wav')
+    # Sound Effects
+    flap_sound  = pygame.mixer.Sound('sound/sfx_wing.wav')
+    death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
+    score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
+
+except Exception as e:
+    print(f"CRITICAL ERROR: Asset loading failed ({e}). Playing in fallback mode.")
+    # Fallback Assets (Mock generation)
+    background_surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
+    background_surface.fill((30, 30, 30))
+    floor_surface = pygame.Surface((SCREEN_WIDTH, 100))
+    floor_surface.fill((200, 200, 200))
+    bird_surface = pygame.Surface((34, 24))
+    bird_surface.fill((255, 255, 0))
+    bird_rectangle = bird_surface.get_rect(center=(100, 512))
+    bird_frames = [bird_surface]
+    pipe_surface = pygame.Surface((52, 320))
+    pipe_surface.fill((0, 255, 0))
+    game_over_surface = pygame.Surface((200, 50))
+    game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
+    
+    # Sound Mock
+    class MockSound:
+        def play(self): pass
+    flap_sound = MockSound()
+    death_sound = MockSound()
+    score_sound = MockSound()
 
 
 # ============================================================================
