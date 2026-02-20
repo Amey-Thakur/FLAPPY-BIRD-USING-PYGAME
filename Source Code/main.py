@@ -35,6 +35,26 @@ PIPE_GAP        = 300       # Vertical space between top and bottom pipes
 # CORE LOGIC
 # ============================================================================
 
+def load_sound(path):
+    """
+    Cross-platform sound loader.
+    
+    Attempts to load the OGG version first (required for WebAssembly/Pygbag),
+    then falls back to the original WAV file (for local desktop execution).
+    
+    Parameters:
+        path (str): Path to the sound file (with .wav extension).
+        
+    Returns:
+        pygame.mixer.Sound: The loaded sound object.
+    """
+    import os
+    ogg_path = os.path.splitext(path)[0] + '.ogg'
+    try:
+        return pygame.mixer.Sound(ogg_path)
+    except:
+        return pygame.mixer.Sound(path)
+
 def draw_floor():
     """
     Renders the infinite scrolling floor effect.
@@ -312,9 +332,9 @@ try:
     game_over_rectangle = game_over_surface.get_rect(center=(288, 512))
 
     # Sound Effects
-    flap_sound  = pygame.mixer.Sound('sound/sfx_wing.wav')
-    death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
-    score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
+    flap_sound  = load_sound('sound/sfx_wing.wav')
+    death_sound = load_sound('sound/sfx_hit.wav')
+    score_sound = load_sound('sound/sfx_point.wav')
 
 except Exception as e:
     print(f"CRITICAL ERROR: Asset loading failed ({e}). Playing in fallback mode.")
