@@ -21,6 +21,12 @@ import sys
 import os
 import random
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def resource_path(*parts):
+    """Builds an absolute path for bundled assets (desktop + GitHub Pages build)."""
+    return os.path.join(BASE_DIR, *parts)
+
 # ============================================================================
 # GLOBAL CONFIGURATION
 # ============================================================================
@@ -254,7 +260,7 @@ pygame.display.set_caption("AMEY & MEGA")
 
 # Icon Setup
 try:
-    icon_surface = pygame.image.load('favicon.png')
+    icon_surface = pygame.image.load(resource_path('favicon.png'))
     pygame.display.set_icon(icon_surface)
 except Exception as e:
     print(f"Warning: Could not load icon ({e})")
@@ -265,12 +271,12 @@ clock = pygame.time.Clock()
 try:
     try:
         # Try finding the font with uppercase extension (Primary check)
-        game_font = pygame.font.Font('04B_19.TTF', 40)
-        footer_font = pygame.font.Font('04B_19.TTF', 20)
+        game_font = pygame.font.Font(resource_path('04B_19.TTF'), 40)
+        footer_font = pygame.font.Font(resource_path('04B_19.TTF'), 20)
     except:
         # Fallback to lowercase extension (Secondary check)
-        game_font = pygame.font.Font('04B_19.ttf', 40)
-        footer_font = pygame.font.Font('04B_19.ttf', 20)
+        game_font = pygame.font.Font(resource_path('04B_19.ttf'), 40)
+        footer_font = pygame.font.Font(resource_path('04B_19.ttf'), 20)
 except:
     print("Warning: Custom font not found. Using system font.")
     game_font = pygame.font.SysFont('Arial', 40, bold=True)
@@ -290,13 +296,14 @@ score_sound_countdown = 100
 
 def load_texture(path, alpha=False):
     """Robust texture loader with fallback."""
+    full_path = resource_path(path)
     try:
         if alpha:
-            return pygame.image.load(path).convert_alpha()
+            return pygame.image.load(full_path).convert_alpha()
         else:
-            return pygame.image.load(path).convert()
+            return pygame.image.load(full_path).convert()
     except Exception as e:
-        print(f"Warning: Could not load texture {path} ({e})")
+        print(f"Warning: Could not load texture {full_path} ({e})")
         # Return a visible fallback surface
         surf = pygame.Surface((32, 32))
         surf.fill((255, 0, 255) if alpha else (135, 206, 235))
@@ -315,10 +322,11 @@ def load_sound(path):
     if is_web:
         path = path.replace('.wav', '.ogg')
         
+    full_path = resource_path(path)
     try:
-        return pygame.mixer.Sound(path)
+        return pygame.mixer.Sound(full_path)
     except Exception as e:
-        print(f"Warning: Could not load sound {path} ({e})")
+        print(f"Warning: Could not load sound {full_path} ({e})")
         return MockSound()
 
 # --- Load Images ---
