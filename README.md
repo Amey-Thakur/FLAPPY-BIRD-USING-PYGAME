@@ -1,6 +1,5 @@
 <div align="center">
 
-  <a name="readme-top"></a>
   # Flappy Bird
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
@@ -47,7 +46,16 @@
 
 **Flappy Bird** is a precision-engineered simulation of the side-scrolling arcade classic, rebuilt using **Python** and **Pygame** with a focus on physics-driven interactive design. By leveraging **Object-Oriented Programming (OOP)**, the engine manages complex state transitions between gravity-induced acceleration and user-triggered momentum, delivering a responsive and challenging study into game loop architecture.
 
-### core mechanics
+### Resources
+
+| # | Resource | Description |
+|---|---|---|
+| 1 | [**Live Demo**](https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME/) | The game as published |
+| 2 | [**Source Code**](Source%20Code/) | The engine, assets and sound |
+| 3 | [**Technical Specification**](docs/SPECIFICATION.md) | Design and implementation notes |
+| 4 | [**Screenshots**](screenshots/) | The game as it renders |
+
+### Core Mechanics
 The simulation is governed by strict **computational design patterns** ensuring fidelity and responsiveness:
 *   **Gravity Simulation**: The engine implements a constant downward acceleration vector, countered by high-impulse "flapping" events that calculate instantaneous upward velocity.
 *   **Collision Heuristics**: Utilizes pixel-perfect or AABB collision logic to handle high-frequency interactions between the bird sprite and procedurally generated pipe obstacles.
@@ -268,7 +276,7 @@ Special thanks to the **mentors and peers** whose encouragement, discussions, an
 
 <div align="center">
 
-  [↑ Back to Top](#readme-top)
+  [↑ Back to Top](#flappy-bird)
 
   [Authors](#authors) &nbsp;·&nbsp; [Overview](#overview) &nbsp;·&nbsp; [Features](#features) &nbsp;·&nbsp; [Structure](#project-structure) &nbsp;·&nbsp; [Results](#results) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
