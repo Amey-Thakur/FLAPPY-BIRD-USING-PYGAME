@@ -49,6 +49,10 @@ jobs:
           mkdir -p dist
           cp -r "Source Code/build/web/." dist/
 
+      - name: Apply SEO Metadata
+        run: |
+          python .github/seo.py
+
       - name: Upload Project
         uses: actions/upload-pages-artifact@v3
         with:
