@@ -31,8 +31,10 @@
             }
         }
     ],
+    "dateCreated": "2021-06-30",
     "dateReleased": "2021-06-30",
     "codeRepository": "https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME",
+    "isPartOf": "https://github.com/Amey-Thakur/COMPUTER-ENGINEERING",
     "developmentStatus": "complete",
     "applicationCategory": "Arcade Game / Simulation",
     "keywords": [
@@ -40,6 +42,32 @@
         "Arcade",
         "Python",
         "Pygame",
-        "Terna Engineering College"
-    ]
+        "Terna Engineering College",
+        "Computer Engineering",
+        "Computer Science",
+        "Engineering",
+        "Flappy Bird Game",
+        "Game",
+        "Game Development",
+        "Gravity Simulation",
+        "Procedural Generation",
+        "Pygame Games",
+        "Pygame WASM",
+        "Python Game",
+        "University Of Mumbai",
+        "University of Mumbai",
+        "Mumbai University",
+        "Navi Mumbai",
+        "India",
+        "B.E. Computer Engineering",
+        "Semester VIII",
+        "Amey Thakur",
+        "amey",
+        "ameythakur",
+        "amey-thakur",
+        "ameyarc",
+        "Mega Satish",
+        "megasatish"
+    ],
+    "url": "https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME/"
 }

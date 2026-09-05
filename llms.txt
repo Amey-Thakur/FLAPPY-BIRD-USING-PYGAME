@@ -1,0 +1,34 @@
+# Flappy Bird
+
+> A Python + Pygame recreation of Flappy Bird, engineered with precise
+> collision physics, optimized game loop timing, and arcade-style
+> responsiveness.
+
+Author: Amey Thakur, ORCID 0000-0001-5644-1575
+Co-author: Mega Satish, ORCID 0000-0002-1844-9557
+Institution: Terna Engineering College, University of Mumbai
+Programme: B.E. Computer Engineering, Fourth Year, Semester VIII
+Licence: CC BY 4.0, attribution required
+Repository created: 30 June 2021
+
+## What is in this repository
+
+- Mega, 6 files
+- Source Code, 25 files
+- docs, 1 file
+- screenshots, 6 files
+
+## Subject terms
+
+computer-engineering, computer-science, engineering, flappy-bird,
+flappy-bird-game, game, game-development, gravity-simulation,
+procedural-generation, pygame, pygame-games, pygame-wasm, python,
+python-game, university-of-mumbai
+
+## Where this sits
+
+- This repository: https://github.com/Amey-Thakur/FLAPPY-BIRD-USING-PYGAME
+- Degree index, every subject and project: https://github.com/Amey-Thakur/COMPUTER-ENGINEERING
+- Project page: https://amey-thakur.github.io/FLAPPY-BIRD-USING-PYGAME/
+- Author: https://github.com/Amey-Thakur
+- Research notes and reflections: https://amey-thakur.github.io/
